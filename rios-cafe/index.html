@@ -1,20 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rio's Cafe Manningtree | Breakfast, Lunch &amp; Coffee on the High Street</title>
 <meta name="description" content="Rio's Cafe in the heart of Manningtree. Breakfast served all day, fresh lunches, homemade cakes and proper coffee. Dog friendly, takeaway window open daily. 23 High Street, Manningtree CO11 1BY.">
-<meta name="keywords" content="Rio's Cafe, cafe Manningtree, breakfast Manningtree, coffee Manningtree, lunch Manningtree, dog friendly cafe Essex">
-<meta property="og:title" content="Rio's Cafe Manningtree">
+<link rel="canonical" href="https://rioscafe.clonal.health/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#9c2b22">
+<meta name="geo.region" content="GB-ESS">
+<meta name="geo.placename" content="Manningtree">
+
+<meta property="og:site_name" content="Rio's Cafe">
+<meta property="og:title" content="Rio's Cafe Manningtree | Breakfast, Lunch &amp; Coffee">
 <meta property="og:description" content="Breakfast all day, fresh lunches, cakes and proper coffee in the heart of Manningtree.">
 <meta property="og:type" content="restaurant.restaurant">
+<meta property="og:url" content="https://rioscafe.clonal.health/">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://rioscafe.clonal.health/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Rio's Cafe, Manningtree - breakfast all day, fresh lunches, proper coffee">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rio's Cafe Manningtree">
+<meta name="twitter:description" content="Breakfast all day, fresh lunches, cakes and proper coffee in the heart of Manningtree.">
+<meta name="twitter:image" content="https://rioscafe.clonal.health/social-card.png">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CafeOrCoffeeShop",
+  "@id": "https://rioscafe.clonal.health/#cafe",
   "name": "Rio's Cafe",
+  "alternateName": "Cafe Rio Manningtree",
   "description": "Cafe in the heart of Manningtree serving breakfast all day, fresh lunches, cakes and coffee. Dog friendly, with a takeaway window open daily.",
+  "url": "https://rioscafe.clonal.health/",
+  "image": "https://rioscafe.clonal.health/social-card.png",
+  "hasMap": "https://www.google.com/maps/dir/?api=1&destination=Rio%27s+Cafe+23+High+Street+Manningtree+CO11+1BY",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "23 High Street",
@@ -24,12 +49,77 @@
     "addressCountry": "GB"
   },
   "telephone": "+441206393100",
-  "servesCuisine": "Cafe, Breakfast, Lunch",
-  "openingHours": ["Mo-Fr 08:30-15:00", "Sa-Su 08:30-16:00"],
+  "servesCuisine": ["Cafe", "Breakfast", "British"],
+  "priceRange": "££",
+  "currenciesAccepted": "GBP",
+  "paymentAccepted": "Cash, Credit Card, Debit Card, Contactless",
+  "areaServed": [
+    { "@type": "Place", "name": "Manningtree" },
+    { "@type": "Place", "name": "Mistley" },
+    { "@type": "Place", "name": "Lawford" },
+    { "@type": "Place", "name": "Tendring, Essex" }
+  ],
+  "hasMenu": {
+    "@type": "Menu",
+    "@id": "https://rioscafe.clonal.health/menu.html#menu",
+    "url": "https://rioscafe.clonal.health/menu.html",
+    "name": "Rio's Cafe Menu"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:30", "closes": "15:00" },
+    { "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday","Sunday"],
+      "opens": "08:30", "closes": "16:00" }
+  ],
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Dog friendly", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Outdoor seating", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Takeaway window", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Table service", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Vegetarian and vegan options", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Gluten free bread available", "value": true }
+  ],
+  "acceptsReservations": "False",
   "sameAs": [
     "https://www.instagram.com/rioscafemanningtree",
     "https://www.facebook.com/caferiomanningtree"
   ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://rioscafe.clonal.health/#faq",
+  "mainEntity": [
+    { "@type": "Question", "name": "Do I need to book a table?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No need - just pop in. For larger groups, give us a ring on 01206 393100 and we'll save you a spot." } },
+    { "@type": "Question", "name": "Are dogs allowed?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes! Well-behaved dogs are always welcome, inside and out." } },
+    { "@type": "Question", "name": "Do you do takeaway?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We do - our takeaway window is open daily from 8:30am for drinks and food on the go." } },
+    { "@type": "Question", "name": "Do you serve breakfast all day?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, breakfast is served all day, every day." } },
+    { "@type": "Question", "name": "Do you cater for veggie, vegan or gluten free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We do - lots of dishes can be made veggie or vegan, and gluten free bread is available. We're a small kitchen so please tell us about any allergies." } },
+    { "@type": "Question", "name": "How do I order?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sitting inside? We offer table service. Sitting outside? Just order at the bar with your table number." } }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://rioscafe.clonal.health/#website",
+  "name": "Rio's Cafe Manningtree",
+  "url": "https://rioscafe.clonal.health/",
+  "inLanguage": "en-GB",
+  "publisher": { "@id": "https://rioscafe.clonal.health/#cafe" }
 }
 </script>
 <style>
