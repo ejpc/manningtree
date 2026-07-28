@@ -18,7 +18,7 @@ import pathlib
 import re
 import sys
 
-CURRENT = "rioscafe.clonal.health"
+CURRENT = "ejpc.github.io/manningtree/rioscafe"
 FILES = ["index.html", "menu.html", "sitemap.xml", "robots.txt"]
 
 if len(sys.argv) != 2:

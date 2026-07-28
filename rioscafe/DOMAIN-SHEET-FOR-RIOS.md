@@ -92,7 +92,7 @@ Wilf Cartwright
    ```
 2. Repoint the site's SEO tags:
    ```
-   cd rios-cafe && python3 set-domain.py rioscafe.co.uk
+   cd rioscafe && python3 set-domain.py rioscafe.co.uk
    git add -A && git commit -m "Move to rioscafe.co.uk" && git push
    ```
 3. GitHub → repo → Settings → Pages → Custom domain → `rioscafe.co.uk` → Save.
