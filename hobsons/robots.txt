@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ejpc.github.io/manningtree/hobsons/sitemap.xml
