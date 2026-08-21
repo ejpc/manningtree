@@ -34,6 +34,65 @@ WANTED = ["index.html", "menu.html", "services.html", "qr-card.html",
 WANTED_DIRS = ["photos", "art"]
 
 
+
+HANDOVER_NOTE = """YOUR WEBSITE - everything you need
+{name}
+================================================================
+
+This folder is your complete website. Please keep it somewhere
+safe: email it to yourself, or copy it onto a memory stick.
+
+
+WHAT YOU OWN
+------------
+
+1. YOUR WEB ADDRESS
+   {domain}
+
+   You bought this yourself, so it is registered in your name and
+   nobody else can take it. You pay the domain company directly,
+   usually under 10 pounds a year. Keep an eye on the renewal - if
+   it lapses, the address stops working and someone else can buy it.
+
+2. THESE FILES
+   This is the entire website. Every page, picture and setting is
+   in this folder. There is nothing else and nothing hidden.
+
+
+WHERE THE WEBSITE IS RIGHT NOW
+------------------------------
+
+It is hosted free on a service called GitHub Pages, run by
+Microsoft. There is no monthly bill and nothing to pay for hosting.
+
+
+IF YOU EVER WANT SOMEONE ELSE TO LOOK AFTER IT
+----------------------------------------------
+
+You are not tied to anyone. Give this folder to any web designer,
+or any hosting company, and say:
+
+    "Please put these files online and point my web address
+     {domain} at them."
+
+That is a small, ordinary job. Any host can do it. Many will do it
+free, and the rest charge a few pounds a month. Because you own the
+address, you can move it wherever you like, whenever you like.
+
+
+IF SOMETHING LOOKS WRONG
+------------------------
+
+Get in touch and I will sort it out.
+
+
+MADE BY
+-------
+Wilfred Cartwright
+{email}
+"""
+
+
 def die(msg):
     sys.exit("error: " + msg)
 
@@ -130,11 +189,29 @@ def main():
     subprocess.run(["git", "commit", "-q", "-m",
                     f"{slug} website, live on {domain}"], cwd=out, check=True)
 
+    # ---- handover pack: their files plus a plain-English note ----
+    import zipfile
+    name = re.search(r"<title>([^|<]+)", (out / "index.html").read_text(encoding="utf-8"))
+    name = name.group(1).strip() if name else slug
+    email = subprocess.run(["git", "config", "user.email"], cwd=out,
+                           capture_output=True, text=True).stdout.strip()
+    note = HANDOVER_NOTE.format(name=name, domain=domain, email=email or "")
+    (out / "READ ME FIRST.txt").write_text(note, encoding="utf-8")
+
+    zip_path = HERE.parent / f"{slug}-handover.zip"
+    with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
+        for f in sorted(out.rglob("*")):
+            if f.is_file() and ".git" not in f.parts:
+                z.write(f, f.relative_to(out))
+    kb = zip_path.stat().st_size / 1024
+
     print(f"\nPrepared {out}")
     print(f"  copied      {', '.join(copied)}")
     print(f"  rewrote     {changed} addresses -> {domain}")
     print(f"  CNAME       {domain}")
     print(f"  {qr_note}")
+    print(f"\n  HANDOVER PACK  {zip_path}  ({kb:.0f} KB)")
+    print( "                 email this to them when they pay - it is their copy")
 
     repo = f"{slug}-site"
     if push:
