@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Changing your own prices and text</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; line-height:1.65;
+    color:#2a2a2e; background:#f5f4f2; }
+  .wrap{ max-width:680px; margin:0 auto; padding:40px 22px 80px; }
+  h1{ font-family:Georgia,serif; font-size:clamp(28px,6vw,38px); color:#1d1d20; line-height:1.15; }
+  .lede{ font-size:19px; color:#5a5a63; margin:14px 0 34px; }
+  h2{ font-family:Georgia,serif; font-size:22px; margin:38px 0 4px; color:#1d1d20; }
+  p{ margin:12px 0; }
+  ol{ margin:0; padding:0; list-style:none; counter-reset:step; }
+  ol li{ counter-increment:step; position:relative; padding:18px 0 18px 54px;
+    border-bottom:1px solid #e4e2de; }
+  ol li::before{ content:counter(step); position:absolute; left:0; top:16px;
+    width:34px; height:34px; border-radius:50%; background:#1d1d20; color:#fff;
+    font-weight:bold; font-size:16px; display:flex; align-items:center; justify-content:center; }
+  ol li b{ display:block; font-size:17px; margin-bottom:2px; }
+  .note{ background:#fff; border:1px solid #e4e2de; border-left:4px solid #1d1d20;
+    border-radius:8px; padding:16px 18px; margin:22px 0; }
+  .warn{ background:#fff6e8; border:1px solid #e8c98a; border-left:4px solid #d09a2c;
+    border-radius:8px; padding:16px 18px; margin:22px 0; }
+  .warn b{ color:#8a6420; }
+  .safe{ background:#eef6ee; border:1px solid #b9d9bb; border-left:4px solid #4c8a52;
+    border-radius:8px; padding:16px 18px; margin:22px 0; }
+  .safe b{ color:#33632f; }
+  code{ font-family:ui-monospace,Menlo,Consolas,monospace; font-size:15px;
+    background:#fff; border:1px solid #e4e2de; border-radius:5px; padding:2px 6px; }
+  .ex{ background:#fff; border:1px solid #e4e2de; border-radius:8px; padding:14px 16px;
+    margin:14px 0; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:14px;
+    line-height:1.9; overflow-x:auto; }
+  .ex .keep{ color:#a0a0a8; }
+  .ex .edit{ background:#fff3ce; font-weight:bold; padding:1px 3px; border-radius:3px; }
+  .end{ margin-top:40px; padding-top:22px; border-top:2px solid #1d1d20; color:#5a5a63; }
+
+  .who{ background:#1d1d20; color:#fff; border-radius:10px; padding:14px 18px;
+    margin:0 0 26px; font-size:13px; letter-spacing:1px; text-transform:uppercase; }
+  .who b{ display:block; font-family:Georgia,serif; font-size:22px; letter-spacing:0;
+    text-transform:none; margin-top:3px; }
+  .who span{ display:block; font-size:13px; letter-spacing:0; text-transform:none;
+    color:#a8a8b0; margin-top:2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="who">Prepared for<br><b>Penelope's Cafe</b><span>21 Stour Street, Manningtree, CO11 1DH</span></div>
+
+  <h1>Changing your own prices and text</h1>
+  <p class="lede">If a price goes up or your hours change, you can update it yourself
+  in about a minute. You don't need to know anything technical — you're just
+  typing over some words.</p>
+
+  <div class="safe">
+    <b>You cannot permanently break this.</b>
+    <p style="margin-bottom:0;">Every previous version of your website is saved
+    automatically, forever. If something goes wrong, ring or email me and I'll put
+    it back exactly as it was in about a minute. So don't be nervous about trying.</p>
+  </div>
+
+  <h2>The only rule</h2>
+  <p>Your website is made of ordinary words mixed in with instructions for the
+  computer. The computer's instructions live inside <b>pointy brackets</b>, like this:
+  <code>&lt;h3&gt;</code></p>
+
+  <p><b>Change the ordinary words. Never touch anything inside pointy brackets.</b>
+  That's the whole rule.</p>
+
+  <p>Here's a real line from your prices page. The grey parts are the computer's;
+  the highlighted parts are yours to change:</p>
+
+  <div class="ex">
+    <span class="keep">&lt;span class="n"&gt;&lt;b&gt;</span><span class="edit">Beard Trim</span><span class="keep">&lt;/b&gt;</span><br>
+    <span class="keep">&lt;span class="d"&gt;</span><span class="edit">shaped and tidied</span><span class="keep">&lt;/span&gt;&lt;/span&gt;</span><br>
+    <span class="keep">&lt;span class="p"&gt;</span><span class="edit">£7</span><span class="keep">&lt;/span&gt;</span>
+  </div>
+
+  <p>So to put the beard trim up to £8, you change <code>£7</code> to <code>£8</code>
+  and leave every bracket exactly as it is.</p>
+
+  <h2>How to do it</h2>
+  <ol>
+    <li><b>Create a free GitHub account</b>
+      Only needed once. Go to github.com, sign up, then send me your username and
+      I'll give you access to your own website. Skip this if I've already done it.</li>
+
+    <li><b>Open the link I sent you</b>
+      It goes straight to the right page. Bookmark it — it's the same link every time.</li>
+
+    <li><b>Click the pencil icon</b>
+      Top right of the page, above the text. That switches it into edit mode.</li>
+
+    <li><b>Find the bit you want to change</b>
+      Press <code>Ctrl</code> and <code>F</code> together (or <code>Cmd</code> and
+      <code>F</code> on a Mac), then type what you're looking for — a price, or a word.
+      It'll jump straight to it.</li>
+
+    <li><b>Type over it</b>
+      Change only the words or numbers. Leave the pointy brackets alone.</li>
+
+    <li><b>Click the green "Commit changes" button</b>
+      Top right. A box appears — just click the green button in that too.</li>
+
+    <li><b>Wait a minute, then check your website</b>
+      It takes about sixty seconds to update. Refresh the page and your change
+      will be there.</li>
+  </ol>
+
+  <div class="warn">
+    <b>⚠ Things to leave to me</b>
+    <p style="margin-bottom:0;">Adding photos, changing colours, adding a whole new
+    section, or anything to do with the map or the booking button. Those aren't
+    dangerous, they're just fiddlier than they look. Email me and I'll do it — small
+    tweaks are usually free, bigger jobs are £15.</p>
+  </div>
+
+  <h2>Honestly, though</h2>
+  <p>Plenty of people read this, decide life's too short, and just email me the
+  change instead. That's completely fine and I'm not offended. The option is there
+  if you want it, and if you don't, one email from you does the same job.</p>
+
+  <p class="end">Made by Wilfred Cartwright · any questions, just reply to my email.</p>
+
+</div>
+</body>
+</html>

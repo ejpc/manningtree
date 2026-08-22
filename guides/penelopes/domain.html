@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Getting your web address — step by step</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; line-height:1.65;
+    color:#2a2a2e; background:#f5f4f2; }
+  .wrap{ max-width:680px; margin:0 auto; padding:40px 22px 80px; }
+  h1{ font-family:Georgia,serif; font-size:clamp(28px,6vw,38px); color:#1d1d20; line-height:1.15; }
+  .lede{ font-size:19px; color:#5a5a63; margin:14px 0 34px; }
+  h2{ font-family:Georgia,serif; font-size:22px; margin:38px 0 4px; color:#1d1d20; }
+  p{ margin:12px 0; }
+  ol{ margin:0; padding:0; list-style:none; counter-reset:step; }
+  ol li{ counter-increment:step; position:relative; padding:18px 0 18px 54px;
+    border-bottom:1px solid #e4e2de; }
+  ol li::before{ content:counter(step); position:absolute; left:0; top:16px;
+    width:34px; height:34px; border-radius:50%; background:#1d1d20; color:#fff;
+    font-weight:bold; font-size:16px; display:flex; align-items:center; justify-content:center; }
+  ol li b{ display:block; font-size:17px; margin-bottom:2px; }
+  .note{ background:#fff; border:1px solid #e4e2de; border-left:4px solid #1d1d20;
+    border-radius:8px; padding:16px 18px; margin:22px 0; }
+  .warn{ background:#fff6e8; border:1px solid #e8c98a; border-left:4px solid #d09a2c;
+    border-radius:8px; padding:16px 18px; margin:22px 0; }
+  .warn b{ color:#8a6420; }
+  table{ border-collapse:collapse; width:100%; margin:14px 0; font-size:15px;
+    background:#fff; border:1px solid #e4e2de; border-radius:8px; overflow:hidden; }
+  th,td{ text-align:left; padding:9px 12px; border-bottom:1px solid #eeece8; }
+  th{ background:#f0eee9; font-size:13px; text-transform:uppercase; letter-spacing:1px; }
+  td.mono{ font-family:ui-monospace,Menlo,Consolas,monospace; font-size:14px; }
+  tr:last-child td{ border-bottom:0; }
+  .end{ margin-top:40px; padding-top:22px; border-top:2px solid #1d1d20; color:#5a5a63; }
+  a{ color:#1d1d20; }
+
+  .who{ background:#1d1d20; color:#fff; border-radius:10px; padding:14px 18px;
+    margin:0 0 26px; font-size:13px; letter-spacing:1px; text-transform:uppercase; }
+  .who b{ display:block; font-family:Georgia,serif; font-size:22px; letter-spacing:0;
+    text-transform:none; margin-top:3px; }
+  .who span{ display:block; font-size:13px; letter-spacing:0; text-transform:none;
+    color:#a8a8b0; margin-top:2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="who">Prepared for<br><b>Penelope's Cafe</b><span>21 Stour Street, Manningtree, CO11 1DH</span></div>
+
+  <h1>Getting your web address</h1>
+  <p class="lede">This takes about ten minutes and costs roughly £4 a year.
+  You only ever do it once. Follow the steps in order and don't skip step&nbsp;7 —
+  it's the one that catches everybody out.</p>
+
+  <div class="note">
+    <b>Why you buy it and not me.</b> The web address is registered in your name,
+    on your own card, in your own account. That means it is legally yours and
+    nobody can take it away from you — not me, not anyone. If you ever wanted
+    somebody else to look after your website, you could take the address with you.
+  </div>
+
+  <h2>Buying the address</h2>
+  <ol>
+    <li><b>Go to dash.cloudflare.com</b>
+      Cloudflare are a big, well-known company and they sell web addresses at
+      cost price, which is why it's about £4 rather than the £15 or £20 most
+      places charge.</li>
+
+    <li><b>Create a free account</b>
+      Your email address and a password. They'll send you an email to confirm it —
+      click the link in that email before carrying on.</li>
+
+    <li><b>Click "Domain Registration", then "Register Domain"</b>
+      It's in the menu down the left-hand side.</li>
+
+    <li><b>Type in the address you want and press search</b>
+      I'll have told you which one to look for. If it says it's taken, stop and
+      email me — I'll find you another one.</li>
+
+    <li><b>Add it to the basket and pay</b>
+      It'll be around $5 — they charge in US dollars, so expect about £4 on your
+      statement. Tick the box for auto-renew so it can't lapse by accident.</li>
+  </ol>
+
+  <h2>Pointing it at your website</h2>
+  <p>The address is now yours, but it doesn't know where your website lives yet.
+  These next steps tell it. There are five lines to add and they're nearly identical.</p>
+
+  <ol start="6">
+    <li><b>Click your new address, then click "DNS" in the left-hand menu</b>
+      You'll see a mostly empty list and an "Add record" button.</li>
+
+    <li style="border-bottom:0; padding-bottom:8px;"><b>Add these five records</b>
+      Click "Add record", fill in the three boxes, save, and repeat. The first four
+      are the same except for the last number.
+      <table>
+        <tr><th>Type</th><th>Name</th><th>Content / Target</th></tr>
+        <tr><td class="mono">A</td><td class="mono">@</td><td class="mono">185.199.108.153</td></tr>
+        <tr><td class="mono">A</td><td class="mono">@</td><td class="mono">185.199.109.153</td></tr>
+        <tr><td class="mono">A</td><td class="mono">@</td><td class="mono">185.199.110.153</td></tr>
+        <tr><td class="mono">A</td><td class="mono">@</td><td class="mono">185.199.111.153</td></tr>
+        <tr><td class="mono">CNAME</td><td class="mono">www</td><td class="mono">ejpc.github.io</td></tr>
+      </table>
+    </li>
+  </ol>
+
+  <div class="warn">
+    <b>⚠ The bit everyone gets wrong.</b>
+    <p>Next to each record there's a little cloud icon. It starts <b>orange</b>.
+    You need to click it so it turns <b>grey</b> — grey says "DNS only".</p>
+    <p style="margin-bottom:0;">If any cloud is left orange, your website won't get its
+    security padlock and visitors may see a warning. All five must be grey. It's one
+    click each.</p>
+  </div>
+
+  <ol start="8">
+    <li><b>Email me to say it's done</b>
+      That's your part finished. I'll do the rest at my end, and your website will
+      be live on your own address, usually within a few hours.</li>
+  </ol>
+
+  <h2>If you get stuck</h2>
+  <p>Email me a screenshot of whatever you're looking at and I'll tell you exactly
+  what to click. There is nothing here you can break — if a record goes in wrong,
+  you just delete it and add it again.</p>
+
+  <p class="end">Made by Wilfred Cartwright · any questions, just reply to my email.</p>
+
+</div>
+</body>
+</html>

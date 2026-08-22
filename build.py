@@ -1026,8 +1026,41 @@ def build(slug, s):
     return len(s["cards"]), len(s["sub_sections"])
 
 
+
+def build_guides(slug, s):
+    """Stamp a copy of each guide with the business name on it.
+
+    The guides are identical for every customer - the GitHub addresses are the
+    same for everyone. The name is there purely so a link cannot be sent to the
+    wrong shop by accident.
+    """
+    masters = {"domain": HERE / "guides" / "_domain.html",
+               "changes": HERE / "guides" / "_changes.html"}
+    out = HERE / "guides" / slug
+    out.mkdir(parents=True, exist_ok=True)
+
+    banner = (
+      '<div class="who">Prepared for<br><b>{name}</b>'
+      '<span>{addr}, Manningtree, {pc}</span></div>').format(
+        name=strip(s["name_plain"]), addr=s["address"], pc=s["postcode"])
+    css = ("""
+  .who{ background:#1d1d20; color:#fff; border-radius:10px; padding:14px 18px;
+    margin:0 0 26px; font-size:13px; letter-spacing:1px; text-transform:uppercase; }
+  .who b{ display:block; font-family:Georgia,serif; font-size:22px; letter-spacing:0;
+    text-transform:none; margin-top:3px; }
+  .who span{ display:block; font-size:13px; letter-spacing:0; text-transform:none;
+    color:#a8a8b0; margin-top:2px; }
+""")
+    for kind, src in masters.items():
+        html = src.read_text(encoding="utf-8")
+        html = html.replace("</style>", css + "</style>", 1)
+        html = html.replace('<div class="wrap">\n', '<div class="wrap">\n' + banner + "\n", 1)
+        (out / f"{kind}.html").write_text(html, encoding="utf-8")
+    return out
+
 if __name__ == "__main__":
     for slug, site in SITES.items():
         cards, secs = build(slug, site)
-        print(f"  {slug:16} index.html + {site['sub_file']:14} ({cards} cards, {secs} sections)")
+        build_guides(slug, site)
+        print(f"  {slug:16} index.html + {site['sub_file']:14} ({cards} cards, {secs} sections) + 2 guides")
     print("\nDone. Same template, same sections, same order - only the data differs.")
